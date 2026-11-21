@@ -55,7 +55,7 @@ def atualizar_chamado():
     
     else:
         try:
-            id_chamado = input('\nDigite o ID do chamado: ')
+            id_chamado = int(input('\nDigite o ID do chamado: ')) #Resolvido o bug que não permitia atualizar o status, estava em str e deveria ser int
 
         except ValueError:
             print('Id inválido')
@@ -67,7 +67,7 @@ def atualizar_chamado():
                 chamado['status'] = status
                 print('Chamado atualizado com sucesso!')
                 return
-            print('Chamado não encontrado.')
+        print('Chamado não encontrado.') #Resolvi a identação que causava o bug que sempre mostrava esse texto
 
 while True:
     menu()
